@@ -11,26 +11,26 @@
 </head>
 
 <body>
-    <div class="mainDivision">
+    <div class="mainDiv">
         <div>
             <h1>RAGE FASHION</h1>
         </div>
-        <div><img src="fashion-logo-portfolio-1.png" alt="Avatar" class="image" /></div>
+        <div><img src="fashion-logo-portfolio-1.png" alt="Avatar" class="avatar" /></div>
     </div>
     <div>
         <h3 style="margin-left: -1.5rem ; color: blueviolet;">
             <i class="fa-solid fa-gauge-high"></i>Dashboard
         </h3>
     </div>
-    <div class="dashboardDivision">
-        <div class="display">
+    <div class="dashboardDiv">
+        <div class="card">
             <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%"> -->
-            <div class="totalsales">
+            <div class="totalContainer">
                 <i class="fa-solid fa-money-bill-trend-up"></i>
                 <h4 style="
               color:orange;
               margin-top: 0.7rem;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             ">
                     Total Sales
                 </h4>
@@ -39,12 +39,12 @@
                     Increased by 20%
                 </h4>
             </div>
-            <div class="customersvisited">
+            <div class="profitContainer">
                 <i class="fa-solid fa-database"></i>
                 <h4 style="
               color: orange;
               margin-top: 0.7rem;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             ">
                     Customers Visited
                 </h4>
@@ -53,12 +53,12 @@
                     Increased by 15%
                 </h4>
             </div>
-            <div class="averagespending">
+            <div class="visitorContainer">
                 <i class="fa-solid fa-flag"></i>
                 <h4 style="
               color: orange;
               margin-top: 0.7rem;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             ">
                     Average Spending
                 </h4>
@@ -70,54 +70,45 @@
         </div>
         <div>
             <h2 id="tableHeading">Product Information</h2>
-            <table style="padding: 2rem; background-color: lightcoral;">
-                <thead>
+            <div style="overflow-x: auto; overflow-y: auto">
+                <table class="tableDiv" style="background-color: lightcoral;">
                     <tr>
                         <td>PRODUCT-ID</td>
                         <td>DESCRIPTION</td>
                         <td>SALE AMOUNT</td>
                         <td>PROFIT%</td>
-
                     </tr>
-
-                </thead>
-
-                <tbody>
                     <tr>
-                        <td>1102 </td>
+                        <td>1102</td>
                         <td>abc</td>
                         <td>$30</td>
                         <td>10</td>
                         <!-- <td><span><input type="submit" class="button" value="Add another line" onclick="addField(this);" /></span></td> -->
-
+                        <!-- <td><button id="accepted">Accepted</button></td> -->
+                    </tr>
+                    <tr>
+                        <td>1823</td>
+                        <td>def</td>
+                        <td>$30</td>
+                        <td>10</td>
+                        <!-- <td><button id="pending">Pending</button></td> -->
                     </tr>
                     <tr>
                         <td>1823</td>
                         <td>def</td>
                         <td>$20</td>
                         <td>15</td>
-
+                        <!-- <td><button id="pending">Pending</button></td> -->
                     </tr>
                     <tr>
                         <td>1926</td>
                         <td>ghi</td>
-                        <td>$35</td>
+                        <td>35</td>
                         <td>20</td>
-
+                        <!-- <td><button id="rejected">Rejected</button></td> -->
                     </tr>
-                    <tr>
-                        <td>1911</td>
-                        <td>jkl</td>
-                        <td>$30</td>
-                        <td>15</td>
-
-                    </tr>
-
-
-                </tbody>
-            </table>
-
-
+                </table>
+            </div>
         </div>
     </div>
 </body>
