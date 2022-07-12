@@ -7,75 +7,87 @@ body {
     background: antiquewhite;
 }
 
-.mainDivision {
+.mainDiv {
     display: flex;
     justify-content: space-between;
     margin: auto;
     margin-bottom: 3px;
-
 }
 
-.image {
+.avatar {
     vertical-align: middle;
     width: 70px;
     height: 70px;
-
+    border-radius: 50%;
 }
 
-.dashboardDivision {
+.dashboardDiv {
     background-color: lightblue;
 }
 
-/* .dashboardHeading {
+.dashboardHeading {
     background-color: rgb(207, 214, 219);
     display: flex;
-} */
+}
 
-.display {
+.card {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     transition: 0.3s;
     height: 12rem;
     display: flex;
     justify-content: space-evenly;
-
+    background-color: rgb(207, 214, 219);
 }
 
-.totalsales:hover {
+@media screen and (max-width: 700px) {
+    .card {
+        display: block;
+        height: 20%;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+        justify-self: center;
+    }
+}
+
+.totalContainer:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.customersvisited:hover {
+.profitContainer:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.averagespending:hover {
+.visitorContainer:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.totalsales {
+.totalContainer {
     padding: 1.5rem 1.5rem;
     background-color: rgb(158, 104, 158);
     border-radius: 0.5rem;
     width: 20rem;
     margin-top: 1rem;
-    margin-left: -.6rem;
+    /* margin-left: -0.6rem; */
+    height: 170px;
 }
 
-.customersvisited {
+.profitContainer {
     padding: 1.5rem 1.5rem;
     background-color: rgb(84, 84, 182);
     border-radius: 0.5rem;
     width: 20rem;
     margin-top: 1rem;
+    height: 170px;
 }
 
-.averagespending {
+.visitorContainer {
     padding: 1.5rem 1.5rem;
     background-color: green;
     border-radius: 0.5rem;
     width: 20rem;
     margin-top: 1rem;
-    margin-right: -0.6rem;
+    height: 170px;
 }
 
 .fa-gauge-high:before {
@@ -98,39 +110,36 @@ body {
 }
 
 #tableHeading {
-    margin-left: 1rem;
+    margin-left: 1.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
 }
 
-@media screen and (max-width: 700px) {
-    .display {
-        display: block;
-        height: 20%;
-        width: 100%;
-        align-items: center;
-        justify-items: center;
-        justify-self: center;
-    }
-
-    .totalsales {
-        width: auto;
-    }
-
-    .customersvisited {
-        width: auto;
-    }
-
-    .averagespending {
-        width: auto;
-    }
+button {
+    margin-left: 0rem;
+    width: 7rem;
+    font-size: medium;
 }
 
-/* .statsTable {
+#accepted {
+    background-color: rgb(51, 172, 51);
+}
+
+#pending {
+    background-color: rgb(168, 168, 45);
+}
+
+#rejected {
+    background-color: rgb(100, 90, 90);
+}
+
+.statsTable {
     justify-content: space-evenly;
-} */
+}
 
 table {
-    width: 100%;
-    padding: 2rem;
+    width: 98%;
+    /* padding: 2rem; */
 }
 
 table th,
@@ -139,5 +148,33 @@ td {
 }
 
 table tr {
-    font-weight: 700
+    font-weight: 700;
+}
+
+.tableDiv {
+    padding: 2rem;
+    background-color: aliceblue;
+}
+
+@media screen and (max-width: 700px) {
+    .card {
+        display: block;
+        height: 20%;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+        justify-self: center;
+    }
+
+    .totalContainer {
+        width: auto;
+    }
+
+    .profitContainer {
+        width: auto;
+    }
+
+    .visitorContainer {
+        width: auto;
+    }
 }
