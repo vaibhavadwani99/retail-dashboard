@@ -1,34 +1,32 @@
 from flask_restful import Resource, reqparse
 from models.average_sales_per_customer import Average_sales_model
+import sqlite3
 
 
 class Average_sales(Resource):
-    parser = reqparse.RequestParser()
+    def get(self):
+        connection = sqlite3.connect("data.db")
+        cursor = connection.cursor()
+        query1 = "SELECT sale_amount FROM sales_data"
+        # query2 = "SELECT DISTINCT user_id FROM sales_data"
+        result1 = cursor.execute(query1)
+        # result2 = cursor.execute(query2)
+        row1 = result1.fetchall()
+        # row2 = result2.fetchall()
+        connection.close()
 
-    parser.add_argument(
-        "name", type=str, required=True, help="this field cannot be blank"
-    )
-    parser.add_argument(
-        "value", type=str, required=True, help="this field cannot be blank"
-    )
+        connection = sqlite3.connect("data.db")
+        cursor = connection.cursor()
+        query2 = "SELECT DISTINCT user_id FROM sales_data"
+        result2 = cursor.execute(query2)
+        row2 = result2.fetchall()
+        connection.close()
 
-    def get(self, name):
-        total_sales = Average_sales_model.find_by_name(name)
-        if total_sales:
-            return total_sales.json()
-        else:
-            return {"message": "average sales not found"}
+        # row is a list of tuples
+        data = ()
+        for i in range(0, len(row1)):
+            data = data + row1[i]
+        total_sales = sum(data)
 
-    def put(self, name):
-        data = Average_sales.parser.parse_args()
-
-        item = Average_sales_model.find_by_name(name)
-
-        if item is None:
-            item = Average_sales_model(data["name"], data["value"])
-        else:
-            item.value = data["value"]
-            item.name = data["name"]
-        item.save_to_db()
-
-        return item.json()
+        unique_visitors = len(row2)
+        return {"average_sales_per_customer": (total_sales / unique_visitors)}
