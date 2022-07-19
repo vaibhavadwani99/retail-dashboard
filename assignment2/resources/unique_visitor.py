@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from models.unique_visitors import Unique_visitors_model
+
 import sqlite3
 
 

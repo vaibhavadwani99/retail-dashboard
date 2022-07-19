@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from models.average_sales_per_customer import Average_sales_model
+
 import sqlite3
 
 
