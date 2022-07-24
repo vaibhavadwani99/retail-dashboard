@@ -1,23 +1,18 @@
-from flask_restful import Resource, reqparse
-
-import sqlite3
+from flask_restful import Resource
+from models.sales_data import Sales_data_model
 
 
 class Average_sales(Resource):
-    def get(self):
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        query1 = "SELECT user_id, SUM(sale_amount) FROM sales_data GROUP BY user_id"
+    def get(self, date):
 
-        result1 = cursor.execute(query1)
+        items = Sales_data_model.find_by_date(date)
+        # the items which you are getting is an array of objects and each object represents the row of data
+        sales = []
+        unique_visitors = []
+        for item in items:
+            sales += [item.sale_amount]
+            unique_visitors += [item.user_id]
 
-        row1 = result1.fetchall()
-
-        connection.close()
-
-        data = 0
-        for i in range(0, len(row1)):
-            data = data + row1[i][1]
-
-        unique_visitors = len(row1)
-        return {"average_sales_per_customer": data / unique_visitors}
+        total_sales = sum(sales)
+        visitors_unique = len(set(unique_visitors))
+        return {"average sales per customer": total_sales / visitors_unique}

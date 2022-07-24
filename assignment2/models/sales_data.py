@@ -30,6 +30,10 @@ class Sales_data_model(db.Model):
         # sqlalchemy returning row as an object
         return cls.query.filter_by(sid=sid).first()
 
+    @classmethod
+    def find_by_date(cls, date):
+        return cls.query.filter_by(sale_date=date).all()
+
     def save_to_db(self):
 
         db.session.add(self)  # sqlalchemy adding object as a row

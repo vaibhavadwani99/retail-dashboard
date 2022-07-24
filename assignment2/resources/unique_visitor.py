@@ -1,16 +1,13 @@
-from flask_restful import Resource, reqparse
-
-import sqlite3
+from flask_restful import Resource
+from models.sales_data import Sales_data_model
 
 
 class Unique_visitors(Resource):
-    def get(self):
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        query = "SELECT DISTINCT user_id FROM sales_data "
-        result = cursor.execute(query)
-        row = result.fetchall()
-        connection.close()
-        # row is a list of tuples
-        unique_visitors = len(row)
-        return {"unique_visitors": unique_visitors}
+    def get(self, date):
+        items = Sales_data_model.find_by_date(date)
+
+        visitors = []
+        for item in items:
+            visitors += [item.user_id]
+
+        return {"unique_visitors": len(set(visitors))}

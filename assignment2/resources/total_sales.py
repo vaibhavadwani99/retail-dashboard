@@ -1,15 +1,12 @@
-from flask_restful import Resource, reqparse
+from flask_restful import Resource
 
-import sqlite3
+from models.sales_data import Sales_data_model
 
 
 class Total_sales(Resource):
-    def get(self):
-        connection = sqlite3.connect("data.db")
-        cursor = connection.cursor()
-        query = "SELECT SUM(sale_amount) FROM sales_data"
-        result = cursor.execute(query)
-        row = result.fetchall()
-        connection.close()
-
-        return {"total_sales": row[0][0]}
+    def get(self, date):
+        items = Sales_data_model.find_by_date(date)
+        sales = []
+        for item in items:
+            sales += [item.sale_amount]
+        return {"total sales": sum(sales)}
