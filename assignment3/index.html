@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="login.css">
+    <title>Retail Fashion Store</title>
+    <script src="https://kit.fontawesome.com/acc69ae4f6.js" crossorigin="anonymous"></script>
+
+
+<body>
+    <div class="form-container">
+
+        <h2>Login!</h2>
+
+        <form class="login-form">
+            <input type="text" id="username" placeholder="username">
+            <!-- inside the input block name will be displayed which is written inside the placeholder -->
+            <input type="text" id="password" placeholder="password">
+            <input type="submit" value="submit">
+
+            <div class="feedback"></div>
+        </form>
+
+    </div>
+    <div class="retail-dashboard">
+        <div class="mainDiv">
+            <div>
+                <h1>RAGE FASHION</h1>
+            </div>
+            <div><img src="fashion-logo-portfolio-1.png" alt="Avatar" class="avatar" /></div>
+        </div>
+        <div>
+            <h3 style="margin-left: -1.5rem ; color: blueviolet;">
+                <i class="fa-solid fa-gauge-high"></i>Dashboard
+            </h3>
+        </div>
+        <div class="dashboardDiv">
+            <div class="card">
+
+                <div class="totalContainer">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    <h4 style="
+                  color:orange;
+                  margin-top: 0.7rem;
+                  font-size: 1.2rem;
+                ">
+                        Total Sales
+                    </h4>
+                    <h2 style="color: black; font-size: x-large" class="total_sales">$15000</h2>
+                    <h4 style="color: black; font-size: 0.9rem">
+                        Increased by 20%
+                    </h4>
+                </div>
+                <div class="profitContainer">
+                    <i class="fa-solid fa-database"></i>
+                    <h4 style="
+                  color: orange;
+                  margin-top: 0.7rem;
+                  font-size: 1.2rem;
+                ">
+                        Customers Visited
+                    </h4>
+                    <h2 style="color: black; font-size: x-large" class="customers_visited">100</h2>
+                    <h4 style="color: black; font-size: 0.9rem">
+                        Increased by 15%
+                    </h4>
+                </div>
+                <div class="visitorContainer">
+                    <i class="fa-solid fa-flag"></i>
+                    <h4 style="
+                  color: orange;
+                  margin-top: 0.7rem;
+                  font-size: 1.2rem;
+                ">
+                        Average Spending
+                    </h4>
+                    <h2 style="color: black; font-size: x-large" class="average_spending">$150</h2>
+                    <h4 style="color: black; font-size: 0.9rem">
+                        Increased by 10%
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <h2 id="tableHeading">Product Information</h2>
+                <div style="overflow-x: auto; overflow-y: auto">
+                    <table class="tableDiv" style="background-color: lightcoral;">
+                        <tr>
+                            <td>PRODUCT-ID</td>
+                            <td>DESCRIPTION</td>
+                            <td>SALE AMOUNT</td>
+                            <td>PROFIT%</td>
+                        </tr>
+                        <tr>
+                            <td>1102</td>
+                            <td>abc</td>
+                            <td>$30</td>
+                            <td>10</td>
+
+                        </tr>
+                        <tr>
+                            <td>1823</td>
+                            <td>def</td>
+                            <td>$30</td>
+                            <td>10</td>
+
+                        </tr>
+                        <tr>
+                            <td>1823</td>
+                            <td>def</td>
+                            <td>$20</td>
+                            <td>15</td>
+
+                        </tr>
+                        <tr>
+                            <td>1926</td>
+                            <td>ghi</td>
+                            <td>35</td>
+                            <td>20</td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

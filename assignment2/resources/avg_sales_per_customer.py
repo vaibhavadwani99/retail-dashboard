@@ -1,8 +1,10 @@
 from flask_restful import Resource
 from models.sales_data import Sales_data_model
+from flask_jwt import jwt_required
 
 
 class Average_sales(Resource):
+    @jwt_required()
     def get(self, date):
 
         items = Sales_data_model.find_by_date(date)
