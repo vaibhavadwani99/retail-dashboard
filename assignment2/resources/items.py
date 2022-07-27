@@ -38,6 +38,7 @@ class Item(Resource):
             return item.json()
         return {"message": "item not found"}, 404
 
+    @jwt_required()
     def post(self, pid):  # creating the item you want
         if ItemModel.find_by_pid(pid):
             return {"message": "an item with {} already exist".format(pid)}, 400
@@ -59,6 +60,7 @@ class Item(Resource):
 
         return item.json(), 201
 
+    @jwt_required()
     def delete(self, pid):
 
         item = ItemModel.find_by_pid(pid)
@@ -66,6 +68,7 @@ class Item(Resource):
             item.delete_from_db()
         return {"message": "item deleted"}
 
+    @jwt_required()
     def put(self, pid):
         request_data = Item.parser.parse_args()
 
@@ -89,5 +92,6 @@ class Item(Resource):
 
 
 class item_list(Resource):
+    @jwt_required()
     def get(self):
         return {"items": [item.json() for item in ItemModel.query.all()]}

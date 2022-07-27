@@ -3,7 +3,10 @@
     padding: 5px;
 }
 
+.retail-dashboard {
+    display: none;
 
+}
 
 body {
     background: antiquewhite;

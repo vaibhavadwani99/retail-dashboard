@@ -1,6 +1,7 @@
 # from datetime import date  # date should be in yyyy-mm-dd format
 from flask_restful import reqparse, Resource
 from models.sales_data import Sales_data_model
+from flask_jwt import jwt_required
 
 
 class Sales_data(Resource):
@@ -36,6 +37,7 @@ class Sales_data(Resource):
         help="this field cannot be left blank",
     )
 
+    @jwt_required()
     def get(self, sid):
 
         item = Sales_data_model.find_by_sid(sid)
@@ -43,6 +45,7 @@ class Sales_data(Resource):
             return item.json()
         return {"message": "sale data not found"}, 404
 
+    @jwt_required()
     def post(self, sid):  # creating the item you want
 
         if Sales_data_model.find_by_sid(sid):
@@ -68,6 +71,7 @@ class Sales_data(Resource):
 
         return item.json(), 201
 
+    @jwt_required()
     def delete(self, sid):
 
         item = Sales_data_model.find_by_sid(sid)
@@ -75,6 +79,7 @@ class Sales_data(Resource):
             item.delete_from_db()
         return {"message": "sales_data_deleted"}
 
+    @jwt_required()
     def put(self, sid):
         request_data = Sales_data.parser.parse_args()
 
@@ -100,5 +105,6 @@ class Sales_data(Resource):
 
 
 class Sales_data_list(Resource):
+    @jwt_required()
     def get(self):
         return {"items": [item.json() for item in Sales_data_model.query.all()]}

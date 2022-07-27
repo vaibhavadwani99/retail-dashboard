@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 
 from flask_restful import Api
@@ -14,6 +15,7 @@ from resources.sales_data import Sales_data, Sales_data_list
 from security import authenticate, identity
 
 app = Flask(__name__)
+CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 # this is turn off flask sqlalchemy tracking feature
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
