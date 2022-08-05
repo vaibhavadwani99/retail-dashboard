@@ -1,0 +1,56 @@
+.form-container {
+    display: "";
+}
+
+.form-container a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 50px;
+    border: black 5px solid;
+    font-style: Arial;
+    font-size: 50px;
+
+
+
+}
+
+/* .form-container {
+    margin: auto;
+
+} */
+
+.link {
+    margin: auto;
+}
+
+body {
+    background: #eee;
+}
+
+form {
+    max-width: 200px;
+    margin: 60px auto;
+    background: white;
+    padding: 10px;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 4px;
+    /* text-align: center; */
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* .success {
+    border: 5px solid lightgreen;
+}
+
+.error {
+    border: 5px solid red;
+} */

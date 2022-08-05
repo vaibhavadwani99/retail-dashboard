@@ -1,0 +1,18 @@
+<div class="form-container">
+
+    <h2>Login!</h2>
+
+    <form class="login-form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+        <!-- <label for="username">Username</label> -->
+        <!-- <input type="text" id="username"> -->
+        <input type="text" class="form-control" id="username" required ngModel name="username" placeholder="username" />
+        <!-- inside the input block name will be displayed which is written inside the placeholder -->
+        <!-- <label for="password">Password</label> -->
+        <!-- <input type="text" id="password"> -->
+        <input type="text" class="form-control" id="password" required ngModel name="password" placeholder="password" />
+        <input type="submit" value="submit">
+
+        <div class="feedback" *ngIf="permission" style="color:red;text-align:center">{{feedback}}</div>
+    </form>
+
+</div>
