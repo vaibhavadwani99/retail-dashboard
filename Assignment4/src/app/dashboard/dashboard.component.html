@@ -1,0 +1,107 @@
+<div class="retail-dashboard">
+    <div class="mainDiv">
+        <div>
+            <h1>RAGE FASHION</h1>
+        </div>
+        <div><img src="../../assets/images/fashion-logo-portfolio-1.png" alt="Avatar" class="avatar" /></div>
+    </div>
+    <div>
+        <h3 style="margin-left: -1.5rem ; color: blueviolet;">
+            <i class="fa-solid fa-gauge-high"></i>Dashboard
+        </h3>
+    </div>
+    <div class="dashboardDiv">
+        <div class="card">
+
+            <div class="totalContainer">
+                <i class="fa-solid fa-money-bill-trend-up"></i>
+                <h4 style="
+              color:orange;
+              margin-top: 0.7rem;
+              font-size: 1.2rem;
+            ">
+                    Total Sales
+                </h4>
+                <h2 style="color: black; font-size: x-large" class="total_sales">{{total_sales}}</h2>
+                <h4 style="color: black; font-size: 0.9rem">
+                    Increased by 20%
+                </h4>
+            </div>
+            <div class="profitContainer">
+                <i class="fa-solid fa-database"></i>
+                <h4 style="
+              color: orange;
+              margin-top: 0.7rem;
+              font-size: 1.2rem;
+            ">
+                    Customers Visited
+                </h4>
+                <h2 style="color: black; font-size: x-large" class="customers_visited">{{unique_visitors}}</h2>
+                <h4 style="color: black; font-size: 0.9rem">
+                    Increased by 15%
+                </h4>
+            </div>
+            <div class="visitorContainer">
+                <i class="fa-solid fa-flag"></i>
+                <h4 style="
+              color: orange;
+              margin-top: 0.7rem;
+              font-size: 1.2rem;
+            ">
+                    Average Spending
+                </h4>
+                <h2 style="color: black; font-size: x-large" class="average_spending">{{average_sales}}</h2>
+                <h4 style="color: black; font-size: 0.9rem">
+                    Increased by 10%
+                </h4>
+            </div>
+        </div>
+        <div>
+            <h2 id="tableHeading">Product Information</h2>
+            <div style="overflow-x: auto; overflow-y: auto">
+                <table class="tableDiv" style="background-color: lightcoral;">
+                    <tr>
+                        <td>SALE-DATE</td>
+                        <td>USER-ID</td>
+                        <td>PRODUCT-ID</td>
+                        <td>SALE-AMOUNT</td>
+                    </tr>
+                    <tr *ngFor="let sales of daily_sales">
+                        <td>{{sales.sale_date}}</td>
+                        <td>{{sales.user_id}}</td>
+                        <td>{{sales.product_id}}</td>
+                        <td>{{sales.sale_amount}}</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>1102</td>
+                        <td>abc</td>
+                        <td>$30</td>
+                        <td>10</td>
+
+                    </tr>
+                    <tr>
+                        <td>1823</td>
+                        <td>def</td>
+                        <td>$30</td>
+                        <td>10</td>
+
+                    </tr>
+                    <tr>
+                        <td>1823</td>
+                        <td>def</td>
+                        <td>$20</td>
+                        <td>15</td>
+
+                    </tr>
+                    <tr>
+                        <td>1926</td>
+                        <td>ghi</td>
+                        <td>35</td>
+                        <td>20</td>
+
+                    </tr> -->
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
