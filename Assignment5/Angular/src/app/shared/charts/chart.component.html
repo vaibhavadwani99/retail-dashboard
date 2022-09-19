@@ -1,0 +1,21 @@
+<div *ngIf="chartType === 'pie-chart'">
+  <app-pie-chart [chartUrl]="chartUrl"></app-pie-chart>
+</div>
+<div *ngIf="chartType === 'bar-chart'">
+  <app-bar-chart [chartUrl]="chartUrl"></app-bar-chart>
+</div>
+<div *ngIf="chartType === 'area-chart-animated'">
+  <app-area-chart-animated [chartUrl]="chartUrl"></app-area-chart-animated>
+</div>
+<div *ngIf="chartType === 'area-chart'">
+  <app-area-chart [chartUrl]="chartUrl"></app-area-chart>
+</div>
+<div *ngIf="chartType === 'scatter-chart'">
+  <app-scatter-chart [chartUrl]="chartUrl"></app-scatter-chart>
+</div>
+<div *ngIf="chartType === 'bar-chart-label'">
+  <app-bar-chart-label [chartUrl]="chartUrl"></app-bar-chart-label>
+</div>
+<div *ngIf="chartType === 'scatter-chart-density'">
+  <app-scatter-chart-density [chartUrl]="chartUrl"></app-scatter-chart-density>
+</div>
